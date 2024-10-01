@@ -1,0 +1,32 @@
+{% extends "tasks/layouts.html" %}
+{% block title %} Add task{% endblock title %}
+{% block body %}
+<div class="container">
+<h1>Add task</h1>
+<br>
+        <form submit="{% url 'tasks:add'%}" method="post">
+            {% csrf_token %}
+            {{form}}
+            <br>
+            <input type="submit">
+        </form>
+<br>
+<br>
+        <a href="{% url 'tasks:index'%}">Go to all tasks </a>
+    </div>
+{% endblock body %}
+
+
+{% comment %} <!doctype html>
+<html>
+    <head>
+        <title>Tasks</title>
+    </head>
+    <body>
+        <h1>Add task</h1>
+        <form>
+            <input type="text" name="task">
+            <input type="submit">
+        </form>
+    </body>
+</html> {% endcomment %}
